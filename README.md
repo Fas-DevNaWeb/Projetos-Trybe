@@ -19,5 +19,5 @@
 
 [(Fas-Lanches-CSS)](https://github.com/Fas-DevNaWeb/Projetos-Trybe/blob/main/Dow/style.css "(Fas-Lanches-CSS)")
 
-[(Fas-Lanches-Js)](https://github.com/Fas-DevNaWeb/Projetos-Trybe/blob/main/Dow/script.js "(Fas-Lanches-Js)")
+[(Fas-Lanches-JS)](https://github.com/Fas-DevNaWeb/Projetos-Trybe/blob/main/Dow/script.js "(Fas-Lanches-Js)")
 </html>
