@@ -322,3 +322,36 @@ main {
     align-items: flex-start;
     gap: 8px;
 }
+
+.molhos-h4 {
+    color: var(--other-black, #000);
+    /* title/h4 */
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 145%;
+
+    /* 26.1px */
+}
+.logo-molhos{
+    display: flex;
+align-items: center;
+gap: 8px;
+}
+.logo-molhos p {
+    color: var(--orange-8, #E8590C);
+
+    /* text/500/sm */
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 155%;
+    /* 21.7px */
+}
+.batata-frita{
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+}
