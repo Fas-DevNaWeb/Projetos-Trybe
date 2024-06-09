@@ -17,7 +17,7 @@
 
 [Pagina-(Fas-Lanches-HTML)](https://github.com/Fas-DevNaWeb/Projetos-Trybe/blob/main/Dow/index.html "Pagina-(Spotify-HTML)")
 
-[(Fas-Lanches-CSS)](https://github.com/Fas-DevNaWeb/Projetos-Trybe/blob/main/Dow/style.css "(Fas-Lanches-CSS)")
+[(Fas-Lanches-CSS)](https://github.com/Fas-DevNaWeb/Projetos-Trybe/blob/main/Dow/index.css "(Fas-Lanches-CSS)")
 
 [(Fas-Lanches-JS)](https://github.com/Fas-DevNaWeb/Projetos-Trybe/blob/main/Dow/script.js "(Fas-Lanches-Js)")
 </html>
