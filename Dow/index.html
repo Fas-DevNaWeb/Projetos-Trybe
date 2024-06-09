@@ -4,168 +4,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">    
-    <link rel="stylesheet" href="style.css">
-    <title>Fas-Lanches</title>
+    <link rel="stylesheet" href="index.css">
+    <title>GUStosão Lanches</title>
 </head>
 
 <body>
-    <header>
-        <img src="./images/gustosao-lanche.svg" alt="Perfil">
-    </header>
-    <main>
-        <h1 class="envie-seu-pedido">Envie seu pedido</h1>
-        <form action="" method="get">
-            <div class="div-identificacao">
-                <div class="logo-identificacao">
-                    <img src="images/logo-identificacao.svg" alt="logo-perfil">
-                </div>
+    <div class="principal">
+        <main>
+            <header>
+                <img src="images/logo.svg" alt="logo-amburguer">
+            </header>
 
-                <div class="inputs-identificacao">
-                    <div class="input-name">
-                        <label for="name">Nome</label>
-                        <input type="text" name="" id="name">
+            <h1 class="envie-seu-pedido">Envie seu pedido</h1>
+
+            <form action="" method="get">
+
+                <div class="div-indentificacao">
+                    <div class="div-logo-indentificacao">
+                        <img src="images/img-perfil-identificacao.svg" alt="Ferfil identificação">
+                        <h4>Identificação</h4>
                     </div>
 
-                    <div class="input-email">
-                        <label for="email">Email</label>
-                        <input type="email" name="" id="email">
+                    <div class="inputs-identificacao">
+                        <div class="input-name">
+                            <label for="name">Nome</label>
+                            <input type="text" name="Nome" id="name">
+                        </div>
+
+                        <div class="input-email">
+                            <label for="email">Email</label>
+                            <input type="email" name="Email" id="email">
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="tamanho">
-                <div class="logo-identificacao">
-                    <img src="images/logo-tamanho.svg" alt="Hamburguer">
-                </div>
-                <div class="div-opcoes-lanches">
-                    <div class="lanche">
-                        <div class="tamanho-lanche">
-                            <img src="images/logo-lanche.svg" alt="Lanche">
-                            <div>
-                                <p class="opcao-lanche">Lanchão | 1Kg</p>
-                                <p class="preco">R$ 20,00</p>
+                <div class="tamanho">
+                    <div class="div-logo-indentificacao">
+                        <img src="images/logo-hamburguer.svg" alt="logo-amburguer">
+                        <h4>Tamanho</h4>
+                    </div>
+
+                    <div class="div-opcoes-lanches">
+                        <div class="lanche">
+                            <div class="tamanho-lanche">
+                                <img src="images/lanche.svg" alt="lanche">
+                                <div>
+                                    <p class="opcao-lanche">Lanchão | 1Kg</p>
+                                    <p class="preco">R$ 20,00</p>
+                                </div>
+                            </div>
+
+                            <div class="quantidade">
+                                <button type="button" class="btn-menos-lanchao">-</button>
+                                <p class="mostrador-quantidade" id="qtd-lanchao">0</p>
+                                <button type="button" class="btn-mais-lanchao">+</button>
                             </div>
                         </div>
 
-                        <div class="quantidade">
-                            <button class="btn-menos-lanchao">-</button>
-                            <p class="mostrador-quantidade">10</p>
-                            <button class="btn-mais-lanchao">+</button>
-                        </div>
-                    </div>
-                </div>
+                        <div class="lanche">
+                            <div class="tamanho-lanche">
+                                <img src="images/lanche.svg" alt="lanche">
+                                <div>
+                                    <p class="opcao-lanche">Lanche | 500g</p>
+                                    <p class="preco">R$ 15,00</p>
+                                </div>
+                            </div>
 
-
-                <div class="div-opcoes-lanches">
-                    <div class="lanche">
-                        <div class="tamanho-lanche">
-                            <img src="images/logo-lanche.svg" alt="Lanche">
-                            <div>
-                                <p class="opcao-lanche">Lanche | 500g</p>
-                                <p class="preco">R$ 15,00</p>
+                            <div class="quantidade">
+                                <button type="button" class="btn-menos-lanche">-</button>
+                                <p class="mostrador-quantidade" id="qtd-lanche">0</p>
+                                <button type="button" class="btn-mais-lanche">+</button>
                             </div>
                         </div>
 
-                        <div class="quantidade">
-                            <button class="btn-menos-lanche">-</button>
-                            <p class="mostrador-quantidade">10</p>
-                            <button class="btn-mais-lanche">+</button>
+                        <div class="lanche">
+                            <div class="tamanho-lanche">
+                                <img src="images/lanche.svg" alt="lanche">
+                                <div>
+                                    <p class="opcao-lanche">Lanchinho | 250g</p>
+                                    <p class="preco">R$ 10,00</p>
+                                </div>
+                            </div>
+
+                            <div class="quantidade">
+                                <button type="button" class="btn-menos-lanchinho">-</button>
+                                <p class="mostrador-quantidade" id="qtd-lanchinho">0</p>
+                                <button type="button" class="btn-mais-lanchinho">+</button>
+                            </div>
                         </div>
                     </div>
-                </div>
 
+                    <div class="adicionais">
+                        <div class="div-logo-indentificacao">
+                            <img src="images/ovos.svg" alt="logo-ovos">
+                            <h4>Adicionais </h4>
+                        </div>
 
-                <div class="div-opcoes-lanches">
-                    <div class="lanche">
-                        <div class="tamanho-lanche">
-                            <img src="images/logo-lanche.svg" alt="Lanche">
-                            <div>
-                                <p class="opcao-lanche">Lanchinho | 250g</p>
-                                <p class="preco">R$ 20,00</p>
+                        <div class="div-adicionais">
+                            <div class="opcao-adicional">
+                                <p class="nome-opcional">Ovo frito</p>
+                                <p class="preco-opcional">R$ 1,50</p>
+                            </div>
+
+                            <div class="quantidade">
+                                <button type="button" class="btn-menos-ovo">-</button>
+                                <p class="mostrador-quantidade" id="qtd-ovo">0</p>
+                                <button type="button" class="btn-mais-ovo">+</button>
                             </div>
                         </div>
 
-                        <div class="quantidade">
-                            <button class="btn-menos-lanchinho">-</button>
-                            <p class="mostrador-quantidade">10</p>
-                            <button class="btn-mais-lanchinho">+</button>
+                        <div class="div-adicionais">
+                            <div class="opcao-adicional">
+                                <p class="nome-opcional">Abacaxi</p>
+                                <p class="preco-opcional">R$ 1,00</p>
+                            </div>
+
+                            <div class="quantidade">
+                                <button type="button" class="btn-menos-abacaxi">-</button>
+                                <p class="mostrador-quantidade" id="qtd-abacaxi">0</p>
+                                <button type="button" class="btn-mais-abacaxi">+</button>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="adicionais">
-                    <div class="div-logo-adicionais">
-                        <img src="images/logo-adicionais.svg" alt="ovo-frito">
+                <div class="molhos">
+                    <div class="div-logo-indentificacao">
+                        <img src="images/molhos.svg" alt="logo-molhoes">
+                        <h4>Molhos</h4>
+                        <p class="preco-molho">+ R$ 2,00 cada</p>
                     </div>
-                    <div class="div-ovo-frito">
-                        <div class="preco-ovo-frito">
-                            <p class="ovo-frito">Ovo Frito</p>
-                            <p class="preco-ov">R$ 1,50 </p>
+
+                    <div class="opcoes-molhos">
+                        <div class="div-tipo-molho">
+                            <input type="checkbox" name="molho" id="molho-madeira">
+                            <label for="molho-madeira">Molho Madeira</label>
                         </div>
 
-                        <div class="quantidade">
-                            <button class="btn-menos-quantidade">-</button>
-                            <p class="mostrador-quantidade">10</p>
-                            <button class="btn-mais-quantidade">+</button>
-                        </div>
-                    </div>
-
-                    <div class="div-bacaxi">
-                        <div class="preco-abacaxi">
-                            <p class="abacaxi">Abacaxi</p>
-                            <p class="preco-abacaxi">R$ 1,00 </p>
+                        <div class="div-tipo-molho">
+                            <input type="checkbox" name="molho" id="molho-barbecue">
+                            <label for="molho-barbecue">Molho Barbecue</label>
                         </div>
 
-                        <div class="quantidade">
-                            <button class="btn-menos-quantidade">-</button>
-                            <p class="mostrador-quantidade">10</p>
-                            <button class="btn-mais-quantidade">+</button>
+                        <div class="div-tipo-molho">
+                            <input type="checkbox" name="molho" id="molho-casa">
+                            <label for="molho-casa">Molho Casa</label>
                         </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="molhos">
-                <div class="logo-molhos">
-                    <img src="images/logo-molhos.svg" alt="Molhos">
-                    <h4 class="molhos-h4">Molhos</h4>
-                    <p>+ R$2,00 cada</p>
-                </div>
-
-                <div class="molho-check">
-                    <div class="conjunto-check">
-                        <input type="checkbox" name="" id="molho-madeira" class="tamanho-check">
-                        <label for="molho-madeira">Molho Madeira</label>
-                    </div>
-                    <div class="conjunto-check">
-                        <input type="checkbox" name="" id="molho-barbecue" class="tamanho-check">
-                        <label for="molho-barbecue">Molho Barbecue</label>
-                    </div>
-                    <div class="conjunto-check">
-                        <input type="checkbox" name="" id="molho-da-casa" class="tamanho-check">
-                        <label for="molho-da-casa">Molho Da Casa</label>
-                    </div>
-                    <div class="conjunto-check">
-                        <input type="checkbox" name="" id="molho-alacrim-dourado" class="tamanho-check">
-                        <label for="molho-alacrim-dourado">Molho Alecrim Dourado</label>
+                        <div class="div-tipo-molho">
+                            <input type="checkbox" name="molho" id="alecrim-dourado">
+                            <label for="alecrim-dourado">Alecrim Dourado</label>
+                        </div>
                     </div>
                 </div>
 
                 <div class="batata-frita">
-                    <div class="logo-batata-frita">
-                        <img src="images/logo-batata-frita.svg" alt="batata frita">
+                    <div class="div-logo-indentificacao">
+                        <img src="./images/logo-batata-frita.svg" alt="logo-batata-frita">
                         <h4>Batata Frita</h4>
-                        <p>+ R$ 2,00 cada</p>
+                        <p class="preco-molho">+ R$ 2,00 cada</p>
                     </div>
+
+                    <div class="radio-batata">
+                        <div>
+                            <input type="radio" name="batata" id="sim">
+                            <label for="sim">Sim, por favor!</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" name="batata" id="nao" checked>
+                            <label for="nao">Não, valeu.</label>
+                        </div>
+                    </div>
+
                 </div>
 
-            </div>
-        </form>
-    </main>
+                <div class="algum-comentario">
+                    <div class="div-logo-indentificacao">
+                        <img src="./images/logo-comentario.svg" alt="">
+                        <h4>Algum comentário?</h4>
+                    </div>
 
+                    <textarea name="Comentario" id="" cols="30" rows="10"
+                        placeholder="Digite seu comentário aqui"></textarea>
+
+                </div>
+
+                <div class="termos-aceite">
+                    <input type="checkbox" name="" id="aceite">
+                    <label for="aceite">Você aceita colocar sua vida em risco por livre e espontânea vontade?</label>
+                </div>
+
+                <div class="botoes">
+                    <button type="submit" class="btn-enviar">Enviar pedido</button>
+                    <button type="button" class="btn-recuperar">Recuperar pedido anterior</button>
+                </div>
+            </form>
+
+        </main>
+        <div class="canto-laranja"></div>
+    </div>
+
+    <aside class="ticket">
+        <br><br>
+        == GUSTOSÃO LANCHES ==
+        <br>
+        Quem não sobrevive não volta mais
+        <br>
+        <p class="ticket-id">Pedido n<sup>o</sup> <span id="ticket-number"></span></p>
+
+        <div class="items-lista">
+            <ol id="orderList"></ol>
+        </div>
+
+        Valeu por nunca mais não voltar
+
+        <br><br><br>
+    </aside>
 </body>
+<script src="./script.js"></script>
 
 </html>
