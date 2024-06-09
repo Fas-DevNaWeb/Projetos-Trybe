@@ -415,7 +415,7 @@ textarea {
 }
 
 .ticket {
-    display: none;
+    display:none;
     width: 405px;
     border-radius: 20px;
     background: var(--orange-0, #FFF4E6);
