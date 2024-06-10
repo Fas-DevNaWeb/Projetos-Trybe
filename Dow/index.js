@@ -14,16 +14,28 @@ const btnMenosLanchinho = document.querySelector('.btn-menos-lanchinho');
 const qtdLanchinho = document.querySelector('#qtd-lanchinho');
 const btnMaisLanchinho = document.querySelector('.btn-mais-lanchinho');
 
-const atualizarQuantidade = (btnMenos,btnMais,qtElementos) => {
 
+
+const atualizarQuantidade = (btnMenos, btnMais, qtElementos) => {
+    btnMenos.addEventListener('click', () => {
+        const quantidade = parseInt(qtElementos.innerText);
+        if (quantidade > 0) {
+            qtElementos.innerText = quantidade - 1;
+        }
+    })
+
+    btnMais.addEventListener('click', () => {
+        qtElementos.innerText = parseInt(qtElementos.innerText) + 1;
+    })
 }
+atualizarQuantidade(bntMenosLanchao,btnMaisLanchao,qtdLanchao);
 
-form.addEventListener('submit',(event) => {
-   event.preventDefault();
-   
-   let orderInfo = {};
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
 
-   orderInfo.Nome = inputName.value;
-   orderInfo.Email = inputEmail.value;
-   console.log(orderInfo);
+    let orderInfo = {};
+
+    orderInfo.Nome = inputName.value;
+    orderInfo.Email = inputEmail.value;
+    console.log(orderInfo);
 })
