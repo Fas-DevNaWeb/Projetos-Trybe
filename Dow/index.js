@@ -16,6 +16,8 @@ const btnMaisLanchinho = document.querySelector('.btn-mais-lanchinho');
 
 
 
+
+
 const atualizarQuantidade = (btnMenos, btnMais, qtElementos) => {
     btnMenos.addEventListener('click', () => {
         const quantidade = parseInt(qtElementos.innerText);
@@ -28,7 +30,9 @@ const atualizarQuantidade = (btnMenos, btnMais, qtElementos) => {
         qtElementos.innerText = parseInt(qtElementos.innerText) + 1;
     })
 }
-atualizarQuantidade(bntMenosLanchao,btnMaisLanchao,qtdLanchao);
+atualizarQuantidade(bntMenosLanchao, btnMaisLanchao, qtdLanchao);
+atualizarQuantidade(btnMenosLanche, btnMaisLanche, qtdLanche);
+atualizarQuantidade(btnMenosLanchinho, btnMaisLanchinho, qtdLanchinho);
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
