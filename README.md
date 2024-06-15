@@ -1,4 +1,4 @@
-# Projetos-Trybe
+# Projetos
 
 <html>
  <h2 style="Color:red">Meus projetos desenvolvidos - 2024</h2> 
