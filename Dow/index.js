@@ -69,9 +69,7 @@ quantidade(btnMenosLanchinho, qtdLanchinho, btnMaisLanchinho);
 quantidade(btnMenosOvo, qtdOvo, btnMaisOvo);
 quantidade(btnMenosAbacaxi, qtdAbacaxi, btnMaisAbacaxi);
 
-forn.addEventListener("submit", (event) => {
-  event.preventDefault();
-  
+const criaNotaFiscal = () => {
   let ordrInfo = {};
   ordrInfo.nome = inputName.value;
   ordrInfo.email = inputEmail.value;
@@ -87,32 +85,48 @@ forn.addEventListener("submit", (event) => {
     ordrInfo.quantidadeOvo = parseInt(qtdOvo.innerText);
   if (qtdOvo.innerText != 0)
     ordrInfo.quantidadeAbacaxi = parseInt(qtdAbacaxi.innerText);
-  
+
   const molhos = document.querySelectorAll('input[name="molho"]:checked');
   if (molhos.length > 0) ordrInfo.molhos = molhos.length;
-  
+
   const batata = document.getElementById("sim");
   if (batata.checked === true) ordrInfo.batata = "Sim";
-  
+
   const comentario = document.querySelector("textarea");
   if (comentario.value !== "") ordrInfo.comentario = comentario.value;
 
-  
-  const listNotaFiscal = document.querySelector('#orderList');
+  const listNotaFiscal = document.querySelector("#orderList");
 
   // O método entries() pega chave e valor dos objetos. retorna um array
   const itensNotaFiscal = Object.entries(ordrInfo);
-  
+
+  let sum = 0;
+
   itensNotaFiscal.forEach((item) => {
-    const newLi = document.createElement('li');
+    const newLi = document.createElement("li");
     newLi.innerText = `${item[0]}: ${item[1]}`;
     listNotaFiscal.appendChild(newLi);
-    })
-  
-    const ticket = document.querySelector('.ticket');
-    ticket.style.display = 'block';
-    
-  
-    
-    console.log(ordrInfo);
+
+    if (item[0] === "quantidadeLanchao") sum += parseInt(item[1] * 20);
+    if (item[0] === "quantidadeLanche") sum += parseInt(item[1] * 15);
+    if (item[0] === "quantidadeLanchinho") sum += parseInt(item[1] * 10);
+    if (item[0] === "quantidadeOvo") sum += parseInt(item[1]) * 1.5;
+    if (item[0] === "quantidadeAbacaxi") sum += parseInt(item[1]);
+    if (item[0] === "molhos") sum += molhos.length * 2;
+    if (item[0] === "batata") sum += 2;
+  });
+
+  const newH3 = document.createElement("h3");
+  newH3.innerText = `TOTAL: R$ ${sum.toFixed(2)}`;
+  listNotaFiscal.appendChild(newH3);
+
+  const ticket = document.querySelector(".ticket");
+  ticket.style.display = "block";
+
+  console.log(ordrInfo);
+};
+
+forn.addEventListener("submit", (event) => {
+  event.preventDefault();
+  criaNotaFiscal();
 });
