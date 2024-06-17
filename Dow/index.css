@@ -430,6 +430,7 @@ textarea {
     font-weight: 400;
     line-height: 130%;
     text-align: center;
+    border: 1px solid #CED4DA;
 }
 
 .ticket-id {
@@ -459,4 +460,7 @@ textarea {
     text-align: right;
     margin-right: 40px;
     padding-top: 20px;
+}
+sup{
+    font-size: medium;
 }

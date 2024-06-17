@@ -52,6 +52,8 @@ const btnMenosAbacaxi = document.querySelector(".btn-menos-abacaxi");
 const qtdAbacaxi = document.querySelector("#qtd-abacaxi");
 const btnMaisAbacaxi = document.querySelector(".btn-mais-abacaxi");
 
+const numeroPedido = document.getElementById("ticket-number");
+
 const quantidade = (menos, quantidade, mais) => {
   menos.addEventListener("click", () => {
     if (parseInt(quantidade.innerText) > 0) {
@@ -69,8 +71,16 @@ quantidade(btnMenosLanchinho, qtdLanchinho, btnMaisLanchinho);
 quantidade(btnMenosOvo, qtdOvo, btnMaisOvo);
 quantidade(btnMenosAbacaxi, qtdAbacaxi, btnMaisAbacaxi);
 
+const gerarNumeroPedido = () => {
+  const numero = Math.ceil(Math.random() * 100);
+  numeroPedido.innerText = numero;
+  return numero;
+};
+
 const criaNotaFiscal = () => {
   let ordrInfo = {};
+
+  ordrInfo.Id = gerarNumeroPedido();
   ordrInfo.nome = inputName.value;
   ordrInfo.email = inputEmail.value;
 
