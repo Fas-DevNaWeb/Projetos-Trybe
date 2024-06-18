@@ -28,6 +28,21 @@ escopo, ele executa do mesmo geito se você não identifica-lo como um botão co
 aja como um executador você deve coloca-lo como type="button". Ou fazer uma expecificação no botão desejado.
  */
 
+
+/**
+ * SOBRE localStorage -> é um objeto que guarda informações no seu computador
+ * Métodos
+ * localStorage.setItem(key,value) -> Isere um par chave valor no objeto localStorage
+ * localStorage.getItem(key) -> Retorna o valor da chave passada por parametro no objeto localStorage
+ * 
+ * OBS: Sempre que eu retornar um item do objeto localStorage ele sera uma String
+ *      Você pode transformar essa String em um Array. Utilizando o JSON.parse(localStorage.getInt('key')
+ *      Já se você quizer pegar um Array e transformar em uma String você usa JSON.stringfy([1,2,3,4])
+ * 
+ * Resumindo: JSON.parse(localStorage.getInt('key') para retornar uma Array
+ *            JSON.stringfy([1,2,3,4]) para retornar uma String
+ */
+
 const inputName = document.getElementById("name");
 const inputEmail = document.querySelector("#email");
 const forn = document.querySelector("form");
