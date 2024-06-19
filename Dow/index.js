@@ -69,6 +69,8 @@ const btnMaisAbacaxi = document.querySelector(".btn-mais-abacaxi");
 
 const numeroPedido = document.getElementById("ticket-number");
 
+const btnRecuperar = document.querySelector('.btn-recuperar');
+
 const quantidade = (menos, quantidade, mais) => {
   menos.addEventListener("click", () => {
     if (parseInt(quantidade.innerText) > 0) {
@@ -148,8 +150,16 @@ const criaNotaFiscal = () => {
   const ticket = document.querySelector(".ticket");
   ticket.style.display = "block";
 
-  console.log(ordrInfo);
+
+  localStorage.setItem('nota',JSON.stringify(ordrInfo));
 };
+
+const recuperaNota = () => {
+  
+}
+btnRecuperar.addEventListener('click', () => {
+
+})
 
 forn.addEventListener("submit", (event) => {
   event.preventDefault();
