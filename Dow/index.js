@@ -35,7 +35,7 @@ aja como um executador você deve coloca-lo como type="button". Ou fazer uma exp
  * localStorage.setItem(key,value) -> Isere um par chave valor no objeto localStorage
  * localStorage.getItem(key) -> Retorna o valor da chave passada por parametro no objeto localStorage
  * 
- * OBS: Sempre que eu retornar um item do objeto localStorage ele sera uma String
+ * OBS: Sempre que au retornar um item do objeto localStorage ele sera uma String
  *      Você pode transformar essa String em um Array. Utilizando o JSON.parse(localStorage.getInt('key')
  *      Já se você quizer pegar um Array e transformar em uma String você usa JSON.stringfy([1,2,3,4])
  * 
@@ -95,6 +95,7 @@ const gerarNumeroPedido = () => {
 };
 
 const criaNotaFiscal = () => {
+  
   let ordrInfo = {};
 
   ordrInfo.Id = gerarNumeroPedido();
@@ -147,6 +148,8 @@ const criaNotaFiscal = () => {
   newH3.innerText = `TOTAL: R$ ${sum.toFixed(2)}`;
   listNotaFiscal.appendChild(newH3);
 
+  ordrInfo.Total = sum;
+
   const ticket = document.querySelector(".ticket");
   ticket.style.display = "block";
 
@@ -154,14 +157,50 @@ const criaNotaFiscal = () => {
   localStorage.setItem('nota',JSON.stringify(ordrInfo));
 };
 
-const recuperaNota = () => {
-  
-}
-btnRecuperar.addEventListener('click', () => {
-
-})
-
 forn.addEventListener("submit", (event) => {
   event.preventDefault();
   criaNotaFiscal();
 });
+
+btnRecuperar.addEventListener('click', () => {
+  recuperaNota();
+})
+
+
+
+
+const recuperaNota = () => {
+
+  
+  const objetoRecuperado = JSON.parse(localStorage.nota);
+  
+  numeroPedido.innerText = objetoRecuperado.Id;
+  
+  
+  
+  const listNotaFiscal = document.querySelector("#orderList");
+  listNotaFiscal.innerHTML = '';
+  
+  const itensNotaFiscal = Object.entries(objetoRecuperado);
+  
+  
+
+  itensNotaFiscal.forEach((item) => {
+    const newLi = document.createElement("li");
+    newLi.innerText = `${item[0]}: ${item[1]}`;
+    listNotaFiscal.appendChild(newLi);
+
+  });
+
+  
+  const newH3 = document.createElement("h3");
+  newH3.innerText = `TOTAL: R$ ${objetoRecuperado.Total.toFixed(2)}`;
+  listNotaFiscal.appendChild(newH3);
+
+  const ticket = document.querySelector(".ticket");
+  ticket.style.display = "block";
+
+
+}
+
+//recuperaNota();
