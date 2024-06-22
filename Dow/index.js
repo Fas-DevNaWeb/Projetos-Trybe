@@ -28,17 +28,16 @@ escopo, ele executa do mesmo geito se você não identifica-lo como um botão co
 aja como um executador você deve coloca-lo como type="button". Ou fazer uma expecificação no botão desejado.
  */
 
-
 /**
  * SOBRE localStorage -> é um objeto que guarda informações no seu computador
  * Métodos
  * localStorage.setItem(key,value) -> Isere um par chave valor no objeto localStorage
  * localStorage.getItem(key) -> Retorna o valor da chave passada por parametro no objeto localStorage
- * 
+ *
  * OBS: Sempre que au retornar um item do objeto localStorage ele sera uma String
  *      Você pode transformar essa String em um Array. Utilizando o JSON.parse(localStorage.getInt('key')
  *      Já se você quizer pegar um Array e transformar em uma String você usa JSON.stringfy([1,2,3,4])
- * 
+ *
  * Resumindo: JSON.parse(localStorage.getInt('key') para retornar uma Array
  *            JSON.stringfy([1,2,3,4]) para retornar uma String
  */
@@ -69,7 +68,7 @@ const btnMaisAbacaxi = document.querySelector(".btn-mais-abacaxi");
 
 const numeroPedido = document.getElementById("ticket-number");
 
-const btnRecuperar = document.querySelector('.btn-recuperar');
+const btnRecuperar = document.querySelector(".btn-recuperar");
 
 const quantidade = (menos, quantidade, mais) => {
   menos.addEventListener("click", () => {
@@ -95,7 +94,6 @@ const gerarNumeroPedido = () => {
 };
 
 const criaNotaFiscal = () => {
-  
   let ordrInfo = {};
 
   ordrInfo.Id = gerarNumeroPedido();
@@ -153,8 +151,7 @@ const criaNotaFiscal = () => {
   const ticket = document.querySelector(".ticket");
   ticket.style.display = "block";
 
-
-  localStorage.setItem('nota',JSON.stringify(ordrInfo));
+  localStorage.setItem("nota", JSON.stringify(ordrInfo));
 };
 
 forn.addEventListener("submit", (event) => {
@@ -162,45 +159,32 @@ forn.addEventListener("submit", (event) => {
   criaNotaFiscal();
 });
 
-btnRecuperar.addEventListener('click', () => {
+btnRecuperar.addEventListener("click", () => {
   recuperaNota();
-})
-
-
-
+});
 
 const recuperaNota = () => {
-
-  
   const objetoRecuperado = JSON.parse(localStorage.nota);
-  
+
   numeroPedido.innerText = objetoRecuperado.Id;
-  
-  
-  
+
   const listNotaFiscal = document.querySelector("#orderList");
-  listNotaFiscal.innerHTML = '';
-  
+  listNotaFiscal.innerHTML = "";
+
   const itensNotaFiscal = Object.entries(objetoRecuperado);
-  
-  
 
   itensNotaFiscal.forEach((item) => {
     const newLi = document.createElement("li");
     newLi.innerText = `${item[0]}: ${item[1]}`;
     listNotaFiscal.appendChild(newLi);
-
   });
 
-  
   const newH3 = document.createElement("h3");
   newH3.innerText = `TOTAL: R$ ${objetoRecuperado.Total.toFixed(2)}`;
   listNotaFiscal.appendChild(newH3);
 
   const ticket = document.querySelector(".ticket");
   ticket.style.display = "block";
-
-
-}
+};
 
 //recuperaNota();
